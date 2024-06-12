@@ -3,8 +3,9 @@ import React from "react";
 import Hello from "./components/Hello"; //리액트는 .js 생략!
 import Bye from "./components/Bye";
 import Greet from "./components/Greet";
+import ExpenseItem from "./components/expenses/ExpenseItem";
 
-function App() {
+const App = () => {
   // jsx 문법 => 바로 태그 쓸 수 있는 문법 ⭐️
   // const $h2 = React.createElement("h2", null, "ㅎㅇㅎㅇ");
   const $h2 = <h2>ㅎㅇㅎㅇㅎㅇ</h2>; //{$h2} 로 갖다가 씀
@@ -18,13 +19,10 @@ function App() {
   // 에러 로그는 터미널에 표시됨~!⭐️
   return (
     <>
-      <Hello />
-      <Hello />
-      <Bye />
-      <Greet />
-      
+      <ExpenseItem />
+      <ExpenseItem />
     </>
   );
-}
+};
 
 export default App;
