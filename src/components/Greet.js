@@ -1,12 +1,19 @@
 // import React from "react";   //생략 가능
 
-const Greet = () => {
+import Card from "./UI/Card";
+
+//  ccc.children; : 태그 사이에 있는 것들/
+
+const Greet = (ccc) => {
   return (
-    <ul>
-      <li>사과</li>
-      <li>딸기</li>
-      <li>오렌지</li>
-    </ul>
+    <>
+      <Card className="border-green">
+        <h1>
+          hello React!
+          {ccc.children}
+        </h1>
+      </Card>
+    </>
   );
 };
 export default Greet;

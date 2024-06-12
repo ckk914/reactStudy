@@ -1,6 +1,7 @@
 import React from "react";
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
+import Card from "../UI/Card";
 
 const ExpenseItem = ({ date, title, price: exPrice }) => {
   // console.log('props: ', aaa);
@@ -27,15 +28,37 @@ const ExpenseItem = ({ date, title, price: exPrice }) => {
 
   // 원화 표기법으로 변환
   const formattedPrice = new Intl.NumberFormat("ko-KR").format(exPrice);
+  //태그가 안그려져서 쓸수가 없다~!⭐️
+  // const $btn = document.getElementById("btn");
+  // console.log("btn: ", $btn);
+  // 이벤트 핸들러 선언
+  const clickHandler = (e) => {
+    console.log("클릭함!");
+    console.log(e.target.previousElementSibling.firstElementChild.textContent);
 
+    // const $price = document.querySelectorAll(`.expense-item__price`);
+    // console.log($price);
+  };
   return (
-    <div className="expense-item">
+    <Card className="expense-item">
       <ExpenseDate exDate={date} />
       <div className="expense-item__description">
         <h2>{title}</h2>
         <div className="expense-item__price">{formattedPrice}원</div>
       </div>
-    </div>
+
+      <button id="btn" onClick={clickHandler}>
+        버튼1
+      </button>
+      <button
+        id="btn2"
+        onMouseOver={(e) => {
+          alert("gg");
+        }}
+      >
+        버튼2
+      </button>
+    </Card>
   );
 };
 
