@@ -18,14 +18,42 @@ const App = () => {
   // 5. 변수값이나 함수를 출력할 때는 {}로 감싸면 됨.
   // 에러 로그는 터미널에 표시됨~!⭐️
   // props 보낼때 문자열은 중괄호 생략 가능한데 다른 타입은 {} 써야함~!
+
+  //서버에서 지출 항목 json 배열을 응답 받음
+  const expenses = [
+    {
+      title: "치킨 먹음",
+      price: 30000,
+      date: new Date(2024, 6 - 1, 3),
+    },
+
+    {
+      title: "족발 먹음",
+      price: 40000,
+      date: new Date(2024, 6 - 1, 7),
+    },
+    {
+      title: "헬스장 등록",
+      price: 50000,
+      date: new Date(2024, 6 - 1, 11),
+    },
+  ];
   return (
     <>
-      <ExpenseItem title={"기름값"} price={30000} date={new Date(2024, 6, 3)} />
-      <ExpenseItem title="족발먹음" price={39000} date={new Date(2024, 6, 7)} />
       <ExpenseItem
-        title="치킨먹음"
-        price={50000}
-        date={new Date(2024, 6, 12)}
+        title={expenses[0].title}
+        price={expenses[0].price}
+        date={expenses[0].date}
+      />
+      <ExpenseItem
+        title={expenses[1].title}
+        price={expenses[1].price}
+        date={expenses[1].date}
+      />
+      <ExpenseItem
+        title={expenses[2].title}
+        price={expenses[2].price}
+        date={expenses[2].date}
       />
     </>
   );
