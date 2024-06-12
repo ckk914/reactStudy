@@ -4,6 +4,7 @@ import Hello from "./components/Hello"; //리액트는 .js 생략!
 import Bye from "./components/Bye";
 import Greet from "./components/Greet";
 import ExpenseItem from "./components/expenses/ExpenseItem";
+import ExpenseList from "./components/expenses/ExpenseList";
 
 const App = () => {
   // jsx 문법 => 바로 태그 쓸 수 있는 문법 ⭐️
@@ -40,21 +41,7 @@ const App = () => {
   ];
   return (
     <>
-      <ExpenseItem
-        title={expenses[0].title}
-        price={expenses[0].price}
-        date={expenses[0].date}
-      />
-      <ExpenseItem
-        title={expenses[1].title}
-        price={expenses[1].price}
-        date={expenses[1].date}
-      />
-      <ExpenseItem
-        title={expenses[2].title}
-        price={expenses[2].price}
-        date={expenses[2].date}
-      />
+      <ExpenseList expenses={expenses} />
     </>
   );
 };
