@@ -17,10 +17,16 @@ const App = () => {
   //4. 의미없는 부모는 <React.Fragment>로 묶으면 root 밑에 바로 들어간다! 축약 : <> </> 으로 감싸면됨.,!
   // 5. 변수값이나 함수를 출력할 때는 {}로 감싸면 됨.
   // 에러 로그는 터미널에 표시됨~!⭐️
+  // props 보낼때 문자열은 중괄호 생략 가능한데 다른 타입은 {} 써야함~!
   return (
     <>
-      <ExpenseItem />
-      <ExpenseItem />
+      <ExpenseItem title={"기름값"} price={30000} date={new Date(2024, 6, 3)} />
+      <ExpenseItem title="족발먹음" price={39000} date={new Date(2024, 6, 7)} />
+      <ExpenseItem
+        title="치킨먹음"
+        price={50000}
+        date={new Date(2024, 6, 12)}
+      />
     </>
   );
 };
