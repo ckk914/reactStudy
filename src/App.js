@@ -1,6 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
+import Hello from "./components/Hello"; //리액트는 .js 생략!
+import Bye from "./components/Bye";
+import Greet from "./components/Greet";
 
 function App() {
   // jsx 문법 => 바로 태그 쓸 수 있는 문법 ⭐️
@@ -16,16 +18,11 @@ function App() {
   // 에러 로그는 터미널에 표시됨~!⭐️
   return (
     <>
-      <div>
-        <div className="App">
-          <h1>안녕하세요!</h1>
-          {$h2}
-        </div>
-        <div className="noname">
-          <input type="text" />
-          <label htmlfor=""></label>
-        </div>
-      </div>
+      <Hello />
+      <Hello />
+      <Bye />
+      <Greet />
+      
     </>
   );
 }
