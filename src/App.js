@@ -5,6 +5,7 @@ import Bye from "./components/Bye";
 import Greet from "./components/Greet";
 import ExpenseItem from "./components/expenses/ExpenseItem";
 import ExpenseList from "./components/expenses/ExpenseList";
+import Counter from "./components/practice/Counter";
 
 const App = () => {
   // jsx 문법 => 바로 태그 쓸 수 있는 문법 ⭐️
@@ -18,11 +19,11 @@ const App = () => {
   // 3. 태그의 class 속성은 자바스크립트 키워드 class와 겹쳐서
   //                                className으로 표기
   //     ㄴ렌더링 때는 알아서 class로 나옴!
-  
+
   //4. 의미없는 부모는 <React.Fragment>로 묶으면
   //     root 밑에 바로 태그가 들어간다!
   //        축약: <> </> 으로 감싸면됨., !
-  
+
   // 5. 변수값이나 함수를 출력할 때는 {}로 감싸면 됨.
   // 에러 로그는 터미널에 표시됨~!⭐️
   // props 보낼때 문자열은 중괄호 생략 가능한데 다른 타입은 {} 써야함~!
@@ -46,8 +47,10 @@ const App = () => {
       date: new Date(2024, 6 - 1, 11),
     },
   ];
+  
   return (
     <>
+      <Counter />
       <ExpenseList expenses={expenses} />
     </>
   );
