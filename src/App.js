@@ -5,7 +5,7 @@ import Bye from "./components/Bye";
 import Greet from "./components/Greet";
 import ExpenseItem from "./components/expenses/ExpenseItem";
 import ExpenseList from "./components/expenses/ExpenseList";
-import Counter from "./components/practice/Counter";
+import NewExpense from "./components/new-expense/NewExpense";
 
 const App = () => {
   // jsx 문법 => 바로 태그 쓸 수 있는 문법 ⭐️
@@ -47,10 +47,10 @@ const App = () => {
       date: new Date(2024, 6 - 1, 11),
     },
   ];
-  
+
   return (
     <>
-      <Counter />
+      <NewExpense />
       <ExpenseList expenses={expenses} />
     </>
   );
