@@ -40,13 +40,23 @@ const App = () => {
     {
       title: "족발 먹음",
       price: 40000,
-      date: new Date(2024, 6 - 1, 7),
+      date: new Date(2023, 12 - 1, 7),
     },
     {
       title: "헬스장 등록",
       price: 50000,
       date: new Date(2024, 6 - 1, 11),
     },
+    {
+      title: "파파존스피자",
+      price: 26000,
+      date: new Date(2022, 3 - 1, 14),
+    },
+    // {
+    //   title: "파리채",
+    //   price: 2300,
+    //   date: new Date(2023, 5 - 1, 3),
+    // },
   ];
   //ExpenseForm에게 내려보낼 함수
   const onAddExpense = (userInput) => {

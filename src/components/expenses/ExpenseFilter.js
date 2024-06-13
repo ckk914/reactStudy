@@ -1,10 +1,10 @@
 import React from "react";
 import "./ExpenseFilter.css";
-const ExpenseFilter = ({ onFilter }) => {
+const ExpenseFilter = ({ onChangeFilter }) => {
   //날짜 얻어오는 녀석
   const changeYearHandler = (e) => {
     // console.log(e.target.value);
-    onFilter(e.target.value);
+    onChangeFilter(e.target.value);
   };
 
   return (
