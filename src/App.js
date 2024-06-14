@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import Hello from "./components/Hello"; //리액트는 .js 생략!
 import Bye from "./components/Bye";
 import Greet from "./components/Greet";
@@ -58,19 +58,25 @@ const App = () => {
     //   date: new Date(2023, 5 - 1, 3),
     // },
   ];
+
+  //배열을 상태 변수로 관리
+  const [expenseList, setExpenseList] = useState(expenses);
+
   //ExpenseForm에게 내려보낼 함수
   const onAddExpense = (userInput) => {
     console.log("App.js가 내려보낸 함수 호출!");
     // console.log(userInput);
 
-    expenses.push(userInput);
-    console.log(expenses);
+    // expenseList.push(userInput);
+    // console.log(expenseList);
+    // const newExpenseList = [...expenseList, userInput];
+    setExpenseList(...expenseList, userInput);
   };
 
   return (
     <>
       <NewExpense onSave={onAddExpense} />
-      <ExpenseList expenses={expenses} />
+      <ExpenseList expenses={expenseList} />
     </>
   );
 };

@@ -70,8 +70,12 @@ const ExpenseForm = ({ onAdd }) => {
 
     console.log(userInput);
 
-    //App.js에게 받은 함술를 호출
-    onAdd(userInput); //이 자식이 부모에게 바구니에 담아서 위로 보낸다~!⭐️
+    //App.js에게 받은 함수를 호출
+    onAdd({
+      //이 자식이 부모에게 바구니에 담아서 위로 보낸다~!⭐️
+      ...userInput,
+      date: new Date(userInput.date),
+    }); 
 
     // form input 비우기
     setUserInput({
