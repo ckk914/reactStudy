@@ -18,8 +18,23 @@ const ExpenseList = ({ expenses }) => {
   const filteredExpenses = expenses.filter(
     (ex) => ex.date.getFullYear().toString() === filteredYear
   );
+  //월별 돈 정리
+  // // filteredExpenses.map((e) => console.log(e.date.getMonth() + 1, e.price));
+  // const monthlyExpenses = {};
+
+  // filteredExpenses.forEach((e) => {
+  //   const month = e.date.getMonth() + 1;
+  //   if (!monthlyExpenses[month]) {
+  //     monthlyExpenses[month] = 0;
+  //   }
+  //   monthlyExpenses[month] += e.price;
+  // });
+  // console.log("monthlyExpenses:", monthlyExpenses);
+
   // 지출데이터가 없을 때 보여줄 태그
   let Content = <p>지출 항목이 없습니다.</p>;
+
+  // let pList = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
   // 지출데이터가 있을 때 보여줄 태그
   if (filteredExpenses.length > 0) {
@@ -36,7 +51,7 @@ const ExpenseList = ({ expenses }) => {
   return (
     <div className="expenses">
       <ExpenseFilter onChangeFilter={onFilterChange} />
-      <ExpenseChart />
+      <ExpenseChart expenses={filteredExpenses} />
       {Content}
     </div>
   );
