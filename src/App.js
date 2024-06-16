@@ -16,6 +16,7 @@ const DUMMY_DATA = [
 ];
 
 const App = () => {
+  //상태 데이터로 관리~!⭐️
   const [goals, setGoals] = useState(DUMMY_DATA);
 
   // CourseInput에게 전달할 함수
@@ -34,12 +35,15 @@ const App = () => {
         break;
       }
     }
+  
     // console.log('index: ', index);
-
+    // index 찾아서 1개 삭제
     // goals.splice(index, 1);
+    //   ㅣㅣ
     // goals.splice(goals.findIndex(g => g.id === id), 1);
     // const filteredGoals = ;
-
+    //   ㅣㅣ
+    // 일치하지 않는 애들만 남겨둠
     setGoals(goals.filter((g) => g.id !== id));
   };
 

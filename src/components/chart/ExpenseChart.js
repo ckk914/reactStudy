@@ -18,7 +18,9 @@ const ExpenseChart = ({ expenses }) => {
     { label: "Dec", value: 0 },
   ];
   expenses.forEach((exp) => {
-    //지출액을 추출해서 chartDataPoints 배열에 해당 월에 value에 합산
+    //지출액을 추출해서 chartDataPoints 배열에 해당 월에
+    // value에 합산
+    
     //지출액
     const expensePrice = exp.price;
     const expenseMonth = exp.date.getMonth(); //원래 1이 빠져있음!

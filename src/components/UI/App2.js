@@ -60,6 +60,7 @@ const App = () => {
   ];
 
   //배열을 상태 변수로 관리
+  //변경될 시에. 렌더링 되게 하고자 함
   const [expenseList, setExpenseList] = useState(expenses);
 
   //ExpenseForm에게 내려보낼 함수
@@ -70,6 +71,11 @@ const App = () => {
     // expenseList.push(userInput);
     // console.log(expenseList);
     // const newExpenseList = [...expenseList, userInput];
+    
+    //push -> setExpenseList
+    //기존 리스트 + 뉴 아이템
+    //...expenseList : 기존 배열 복사
+    
     setExpenseList(...expenseList, userInput);
   };
 
