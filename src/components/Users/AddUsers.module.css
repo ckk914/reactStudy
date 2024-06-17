@@ -10,6 +10,7 @@
     font-weight: bold;
     margin-bottom: 0.5rem;
     font-size: 1.3em;
+    color: #fff;
 }
 
 .input input {
@@ -19,6 +20,7 @@
     border: 1px solid #ccc;
     padding: 0.15rem;
     margin-bottom: 0.5rem;
+
 }
 
 .input input:focus {
