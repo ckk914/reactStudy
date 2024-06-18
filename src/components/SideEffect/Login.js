@@ -91,7 +91,7 @@ const Login = ({ onLogin }) => {
 
   const passwordChangeHandler = (e) => {
     dispatchPassword({
-      type: "USER_INPUT",
+      type: "USER_INPUT",  //change 이벤트
       val: e.target.value,
     });
   };
@@ -99,7 +99,7 @@ const Login = ({ onLogin }) => {
   const validateEmailHandler = () => {
     // setEmailIsValid(enteredEmail.includes('@'));
     dispatchEmail({
-      type: "VALIDATE",
+      type: "VALIDATE",   //blur 이벤트
     });
   };
 
