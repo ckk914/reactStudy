@@ -5,10 +5,15 @@ import styles from "./Login.module.css";
 import Button from "../UI/Button";
 
 const Login = ({ onLogin }) => {
+  //사용자가 입력한 이메일 상태 관리
   const [enteredEmail, setEnteredEmail] = useState("");
+  //이메일 입력 값이 정상인지 유무 확인
   const [emailIsValid, setEmailIsValid] = useState();
+  //사용자가 입력한 패스워드를 상태 관리
   const [enteredPassword, setEnteredPassword] = useState("");
+  //패스워드 입력값이 정상인지 유무 확인
   const [passwordIsValid, setPasswordIsValid] = useState();
+  //이메일, 패스워드가 둘 다 정상인지 확인
   const [formIsValid, setFormIsValid] = useState(false);
 
   const emailChangeHandler = (e) => {
@@ -72,7 +77,10 @@ const Login = ({ onLogin }) => {
           />
         </div>
         <div className={styles.actions}>
-          <Button type="submit" className={styles.btn} disabled={!formIsValid}>
+          <Button
+            type="submit"
+            className={styles.btn}
+            disabled={!formIsValid}>
             Login
           </Button>
         </div>
