@@ -5,7 +5,7 @@ const MainHeader = ({ onLogout }) => {
   return (
     <header className={styles["main-header"]}>
       <h1>My React Page!</h1>
-      <Navigation onLogout={onLogout} />
+      <Navigation />
     </header>
   );
 };
