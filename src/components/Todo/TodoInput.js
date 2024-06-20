@@ -8,8 +8,10 @@ const TodoInput = ({ onAddTodo }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
+  //입력창-토글키
   const handleInsertBtnClick = () => {
-    setIsOpen(!isOpen);
+    //이전 상태 처리해야지 동시 set 문제 안생김!
+    setIsOpen((previsOpen) => !previsOpen);
   };
 
   const handleInputChange = (e) => {
@@ -17,9 +19,9 @@ const TodoInput = ({ onAddTodo }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); //새로고침 방지!
     if (inputValue.trim() !== "") {
-      onAddTodo(inputValue.trim());
+      onAddTodo(inputValue.trim()); //투두 추가. 
       setInputValue("");
       setIsOpen(false);
     }

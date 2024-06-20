@@ -11,7 +11,7 @@ const TodoTemplate = () => {
     { id: 3, text: "할 일 3", done: false },
   ]);
   // console.log("tt:", todos);
-
+  //삭제 처리
   const onRemove = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
@@ -30,19 +30,23 @@ const TodoTemplate = () => {
     console.log("newTodo:", newTodo);
     setTodos([...todos, newTodo]);
   };
-
+  
+  //남은 할일 개수 세기
   const uncompletedTodos = todos.filter((todo) => !todo.done);
 
+  //done 처리 
   const checktodo = (id) => {
+    //리스트 복사~!
     const copyTodoList = [...todos];
+    //리스트에서 id 와 같은 걸 찾는다!
     const foundTodo = copyTodoList.find((todo) => todo.id === id);
     foundTodo.done = !foundTodo.done;
     console.log("founded: ", foundTodo);
 
     setTodos(copyTodoList);
     console.log(copyTodoList);
-    
-    // 아래는 맵으로 쓰는 단축 함수
+    //        ㅣㅣ
+    // 아래는 맵으로 코드 단축 가능
     // setTodoList(todoList.map(todo => todo.id === id ? { ...todo, done: !todo.done }:todo));
   };
 
