@@ -13,10 +13,15 @@ const TimerChallenge = ({ title, targetTime }) => {
   //타겟 시간이 종료되었는지 여부
   const [timerExpired, setTimerExpired] = useState(false);
 
+  //자식 컴포넌트 ResultModal에 있는 dialog 태그의 참조를 만듬⭐️
+  const dialog = useRef();
+
   const startHandler = (e) => {
     timer.current = setTimeout(() => {
       console.log("Game Over");
       setTimerExpired(true);
+      //만료될때 창 띄우기!⭐️
+      dialog.current.showModal();
     }, targetTime * 1000);
 
     setTimerStarted(true);
@@ -44,7 +49,9 @@ const TimerChallenge = ({ title, targetTime }) => {
 
   return (
     <>
-      {timerExpired && <ResultModal targetTime={targetTime} result="lost" />}
+      
+        <ResultModal ref={dialog} targetTime={targetTime} result="lost" />
+      
       <section className="challenge">
         <h2>{title}</h2>
         <p className="challenge-time">
