@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import Player from "./components/Ref/Player";
+// import "./App.css";
 
 //bootStrap
-import "bootstrap/dist/css/bootstrap.min.css";
-import TodoTemplate from "./components/Todo/TodoTemplate";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import TodoTemplate from "./components/Todo/TodoTemplate";
 
 const App = () => {
-  return <TodoTemplate />;
+  return (
+    <>
+      <Player />
+      <div id="challenges"></div>
+    </>
+  );
 };
 
 export default App;
