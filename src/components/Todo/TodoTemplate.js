@@ -33,10 +33,23 @@ const TodoTemplate = () => {
 
   const uncompletedTodos = todos.filter((todo) => !todo.done);
 
+  const checktodo = (id) => {
+    const copyTodoList = [...todos];
+    const foundTodo = copyTodoList.find((todo) => todo.id === id);
+    foundTodo.done = !foundTodo.done;
+    console.log("founded: ", foundTodo);
+
+    setTodos(copyTodoList);
+    console.log(copyTodoList);
+    
+    // 아래는 맵으로 쓰는 단축 함수
+    // setTodoList(todoList.map(todo => todo.id === id ? { ...todo, done: !todo.done }:todo));
+  };
+
   return (
     <div className="TodoTemplate">
       <TodoHeader todoCount={uncompletedTodos.length} />
-      <TodoMain todos={todos} onRemove={onRemove} />
+      <TodoMain todos={todos} onRemove={onRemove} onCheck={checktodo} />
       <TodoInput onAddTodo={onAddTodo} />
     </div>
   );

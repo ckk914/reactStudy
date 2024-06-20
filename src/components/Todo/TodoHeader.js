@@ -4,12 +4,19 @@ import { format } from "date-fns";
 
 const TodoHeader = ({ todoCount }) => {
   const today = new Date();
-  const formattedDate = format(today, "yyyy년 M월 d일");
-  const dayOfWeek = ["일", "월", "화", "수", "목", "금", "토"][today.getDay()];
+
+  const dateString = today.toLocaleDateString("ko-KR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  const dayName = today.toLocaleDateString("ko-KR", { weekday: "long" });
+
   return (
     <header>
-      <h1>{formattedDate}</h1>
-      <div className="day">{dayOfWeek}요일</div>
+      <h1>{dateString}</h1>
+      <div className="day">{dayName}</div>
       <div className="tasks-left">할 일 {todoCount}개 남음</div>
     </header>
   );
