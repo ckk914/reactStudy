@@ -28,11 +28,12 @@ $button-color: white;
     button {
         font: inherit;
         cursor: pointer;
-        background-color: transparent;
+        background-color: $button-bg-color;
         border: 1px solid $button-color;
         padding: 0.5rem 2rem;
         border-radius: 25px;
         margin-left: 1rem;
+        color: $button-color;
 
         &:hover,
         &:active {
@@ -43,7 +44,7 @@ $button-color: white;
     }
 
     .button--alt {
-        color: $button-alt-color;
+        color: $button-color;
     }
 
     .button {

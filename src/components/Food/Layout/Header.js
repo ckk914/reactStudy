@@ -5,14 +5,14 @@ import styles from "./Header.module.scss";
 import foodImage from "../../../assets/img/meals.jpeg";
 import HeaderCartButton from "./HeaderCartButton";
 
-const Header = () => {
+const Header = ({ onShowCart }) => {
   const { header, "main-image": mainImage } = styles;
 
   return (
     <>
       <header className={header}>
         <h1>ReactMeals</h1>
-        <HeaderCartButton />
+        <HeaderCartButton onShow={onShowCart} />
       </header>
       <div className={mainImage}>
         <img src={foodImage} alt="맛있어 보여~" />
