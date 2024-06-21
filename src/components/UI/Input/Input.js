@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./input.module.scss";
 
-function Input({ label }) {
+function Input({ label, inputAttr }) {
   return (
     <div className={styles.input}>
-      <label>{label}</label>
-      <input />
+      <label htmlFor={inputAttr.id}>{label}</label>
+      <input {...inputAttr} />
     </div>
   );
 }
