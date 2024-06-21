@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from "react";
 import CartContext from "./cart-context";
 
+//리듀서 관리하고 싶은 상태 변수 나열하면 됨 <여기다가!>⭐️
 const defaultState = {
   items: [], // 장바구니 배열
 };
@@ -30,10 +31,12 @@ const cartReducer = (state, action) => {
 
 const CartProvider = ({ children }) => {
   // 리듀서를 사용하여 상태 데이터를 업데이트
+  // return1: 상태객체를 사용할 수 있는 변수
+  // return2: 상태업데이트를 위한 액션을 취하는 함수 "add"
+
   // param1: 리듀서 함수
   // param2: 초기 상태값
-  // return1: 상태객체를 사용할 수 있는 변수
-  // return2: 상태업데이트를 위한 액션을 취하는 함수
+
   const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultState);
 
   const addItemHandler = (item) => {
