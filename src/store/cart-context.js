@@ -8,7 +8,9 @@ const CartContext = createContext({
   totalPrice: 0, //주문 총액 기본값 깔아두기. : 0
   totalAmount: 0, //장바구니 상품 총 개수
   addItem: (item) => {}, // 장바구니에 추가하는 함수
-  removeItem: (id) => {}, // 장바구니에 상품을 제거하는 함수
+  removeItem: (id) => { }, // 장바구니에 상품을 제거하는 함수
+  
 });
 
 export default CartContext;
+

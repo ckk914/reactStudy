@@ -25,6 +25,7 @@ const MealItem = ({ id, price, description, name }) => {
     addItem(item);
   };
 
+  
   return (
     <li className={meal}>
       <div>
