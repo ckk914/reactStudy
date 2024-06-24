@@ -5,6 +5,7 @@ import React, { createContext } from "react";
 // ㄴ 인터페이스 처럼 정의하는 곳⭐️
 const CartContext = createContext({
   cartItems: [], // 장바구니 배열
+  totalPrice: 0, //주문 총액 기본값 깔아두기. : 0
   addItem: (item) => {}, // 장바구니에 추가하는 함수
   removeItem: (id) => {}, // 장바구니에 상품을 제거하는 함수
 });
