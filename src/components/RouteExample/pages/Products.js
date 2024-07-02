@@ -7,7 +7,7 @@ const Products = () => {
     <>
       <h1>my products page</h1>
       <p>
-        <Link to="/">home</Link>페이지로 이동하기    
+        <Link to="..">home</Link>페이지로 이동하기
       </p>
     </>
   );
