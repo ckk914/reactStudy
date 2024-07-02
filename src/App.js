@@ -4,17 +4,19 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/RouteExample/pages/Home";
 import RootLayout from "./components/RouteExample/layout/RootLayout";
 import ErrPage from "./components/RouteExample/pages/ErrPage";
+import ProductDetail from "./components/RouteExample/pages/productDetail";
 
 const router = createBrowserRouter([
   {
-    path: "/base", // 이동할 경로 path
+    path: "/", // 이동할 경로 path
     element: <RootLayout />, //이동할 페이지
     errorElement: <ErrPage />, //에러 엘리먼트 : 에러가 날때 보여줄 컴포넌트를 설정한다~!⭐️
     children: [
       //Outlet임 여기 애들이 더 늘려서 쓸 수 있음~!
       //자식을 배열로 묶음!
-      { path: "", element: <Home /> },
-      { path: "products", element: <Products /> },    //알아서 /base/products로 간다
+      { index: true, element: <Home /> }, //빈 페이지 패스 보다 index: true 가 낫다 ⭐️
+      { path: "products", element: <Products /> }, //알아서 /base/products로 간다
+      { path: "products/:prodId/page/:pageNo", element: <ProductDetail /> },
     ],
   },
 ]);
