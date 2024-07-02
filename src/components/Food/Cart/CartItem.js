@@ -5,7 +5,8 @@ import styles from "./CartItem.module.scss";
 import CartContext from "../../../store/cart-context";
 
 const CartItem = ({ cart }) => {
-  const { addItem, removeItem } = useContext(CartContext);
+  const { addItem, removeItem } = useContext(CartContext);  //여기서 콘텍스트 선언하면
+                                                            //프로바이더에서 선언
   const { id, name, price, amount } = cart;
 
   const {
@@ -20,6 +21,7 @@ const CartItem = ({ cart }) => {
   const cartAddHandler = () => {
     addItem({ ...cart, amount: 1 });
   };
+
 
   const cartRemoveHandler = (e) => {
     removeItem(id);

@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import CartIcon from "./CartIcon";
 import styles from "./HeaderCartButton.module.scss";
-import CartContext from "../../../store/cart-context";
+import CartContext from "../../../store/cart-context";  //🌈
 
 const HeaderCartButton = ({ onShow }) => {
   //bump 애니메이션을 제어하는 상태 변수
   const [isBump, setIsBump] = useState(false);
   //장바구니 배열 가져오기
-  const { cartItems } = useContext(CartContext);
+  const { cartItems } = useContext(CartContext);  //🌈
 
   //curNumber에 누적해서 더해줌
   // reduce가 cartItems반복해서 순회

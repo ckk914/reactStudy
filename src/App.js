@@ -15,7 +15,7 @@ const App = () => {
   const hideCartHandler = () => setCartIsShown(false);
 
   return (
-    // 프로바이더로 묶인 애들은 자식 컴포넌트에서 사용할 수 있는 상태를 공유해줌
+    // 프로바이더로 묶인 애들은 자식 컴포넌트에서 사용할 수 있는 상태를 공유해줌🥎 ⭐️
     // 장바구니 상태를 공유해줌
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}

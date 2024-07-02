@@ -104,7 +104,8 @@ const CartProvider = ({ children }) => {
     });
   };
 
-  // Provider가 실제로 관리할 상태들의 구체적인 내용들
+  // Provider가 실제로 관리할 상태들의 구체적인 내용들⭐️=> 여기에 없으면 사용 불가함🔥
+  // ㄴ ⭐️ useContext에서 꺼내쓰는것은 결국에 아래 있는 것들이다~!⭐️
   const cartContext = {
     cartItems: cartState.items, // 상태값
     totalPrice: cartState.totalPrice, // 총액 상태값
