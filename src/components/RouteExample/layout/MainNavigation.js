@@ -1,17 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./MainNavigation.module.scss";
-
+// navLink 에서만 함수 정의 가능
 const MainNavigation = () => {
+    //NavLInk 컴포넌트에 className 프롭스에 함수를 전달하면
+    // 첫번째 파라미터에 어떤 객체 정보를 준다.
+    // 활성화 css ⭐️
+    const activeFn = ({ isActive }) => {
+        
+        return isActive ? styles.active : undefined;
+    }
   return (
     <header className={styles.header}>
       <nav>
         <ul className={styles.list}>
           <li>
-            <Link to="/">home</Link>
+            <NavLink to="/" className={activeFn}>
+              home
+            </NavLink>
           </li>
           <li>
-            <Link to="/products">products</Link>
+            <NavLink to="/products" className={activeFn}>
+              products
+            </NavLink>
           </li>
         </ul>
       </nav>
