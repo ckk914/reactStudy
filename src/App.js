@@ -1,10 +1,11 @@
 import React from "react";
-import Products from "./components/RouteExample/pages/Products";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/RouteExample/pages/Home";
 import RootLayout from "./components/RouteExample/layout/RootLayout";
 import ErrPage from "./components/RouteExample/pages/ErrPage";
-import ProductDetail from "./components/RouteExample/pages/productDetail";
+import Events from "./components/RouteExample/pages/Events";
+import EventDetail from "./components/RouteExample/pages/EventDetail";
+import EventLayout from "./components/RouteExample/layout/EventLayout";
 
 const router = createBrowserRouter([
   {
@@ -14,9 +15,19 @@ const router = createBrowserRouter([
     children: [
       //Outlet임 여기 애들이 더 늘려서 쓸 수 있음~!
       //자식을 배열로 묶음!
-      { index: true, element: <Home /> }, //빈 페이지 패스 보다 index: true 가 낫다 ⭐️
-      { path: "products", element: <Products /> }, //알아서 /base/products로 간다
-      { path: "products/:prodId/page/:pageNo", element: <ProductDetail /> },
+      { index: true, element: <Home /> }, //빈 페이지 패스 보다 index: true 가 낫다 ⭐️ index : true  => 부모 주소 사용한다~!
+
+      {
+        path: "events",
+        element: <EventLayout />,
+        children: [
+          { index: true, element: <Events /> },
+          { path: ":Id", element: <EventDetail /> },
+        ],
+      },
+
+      // { path: "products", element: <Products /> }, //알아서 /base/products로 간다
+      // { path: "products/:prodId/page/:pageNo", element: <ProductDetail /> },  // :prodId 와 :pageNo 는 동적 라우트 파라미터 ⭐️
     ],
   },
 ]);
