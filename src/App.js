@@ -10,7 +10,9 @@ import EventDetail, {
   loader as eventDetailLoader,
 } from "./components/RouteExample/pages/EventDetail";
 import EventLayout from "./components/RouteExample/layout/EventLayout";
-import NewEvent from "./components/RouteExample/pages/NewEvent";
+import NewEvent, {
+  action as saveAction,
+} from "./components/RouteExample/pages/NewEvent";
 import EditPage from "./components/RouteExample/pages/EditPage";
 
 // 라우터 설정
@@ -42,7 +44,12 @@ const router = createBrowserRouter([
               { path: "edit", element: <EditPage /> },
             ],
           },
-          { path: "new", element: <NewEvent /> },
+          {
+            path: "new",
+            element: <NewEvent />,
+            // 서버에 갱신 데이터 요청을 보낼 때 트리거
+            action: saveAction,
+          },
         ],
       },
     ],

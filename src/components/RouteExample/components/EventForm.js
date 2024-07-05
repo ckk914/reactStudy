@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from "./EventForm.module.scss";
 import { useNavigate } from "react-router-dom";
+import { Form } from "react-router-dom";
 
 const EventForm = ({ method, event = {} }) => {
   const {
@@ -74,7 +75,12 @@ const EventForm = ({ method, event = {} }) => {
   };
 
   return (
-    <form className={styles.form} onSubmit={submitHandler} noValidate>
+    <Form
+      method="post"
+      className={styles.form}
+      // onSubmit={submitHandler}
+      noValidate
+    >
       <p>
         <label htmlFor="title">Title</label>
         <input
@@ -121,7 +127,7 @@ const EventForm = ({ method, event = {} }) => {
         </button>
         <button>{method === "post" ? "Save" : "Modify"}</button>
       </div>
-    </form>
+    </Form>
   );
 };
 

@@ -20,6 +20,7 @@ export const loader = async ({ params }) => {
 
   // use로 시작하는 함수인 리액트 훅은 컴포넌트 내부에서만 사용가능
   // const { eventId: id } = useParams();
+  //                          ㄴ 주소에 있는 것을 읽는다~!
   // const [ev, setEv] = useState({});
 
   const response = await fetch(`http://localhost:8282/events/${id}`);
