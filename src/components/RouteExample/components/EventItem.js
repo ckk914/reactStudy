@@ -1,34 +1,32 @@
 import React from "react";
 import styles from "./EventItem.module.scss";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSubmit } from "react-router-dom";
 
 const EventItem = ({ event }) => {
+  // action함수를 트리거하는 2번째 방법
+  const submit = useSubmit();
+
   const {
     "event-id": id,
     title,
-    desc: description, //desc 를 description으로 바꿔줌
-    "img-url": image, //img-url을 image로  바꿔줌.
-    "start-date": date, //start-date를 date로 바꿔줌
+    desc: description,
+    "img-url": image,
+    "start-date": date,
   } = event;
+
   // const { eventId: id } = useParams();
 
-  const navigate = useNavigate(); //네비게이션 확인
+  const navigate = useNavigate();
 
+  const deleteHandler = (e) => {
+    if (!window.confirm("정말 삭제하시겠습니까?")) return;
 
-  //이벤트 핸들러는 async로 못만든다! 따로 불러야 된다~!
+    // action을 트리거
+    submit(null, { method: "DELETE" });
 
-  const deleteHandler = async (e) => {
-    // e.preventDefault();
-    if (!window.confirm("정말 삭제하시겠습니까?")) {
-      return;
-    }
-
-    // console.log("id: ", id);
-    // Perform delete operation here, e.g., make an API call to delete the event
-    await fetch(`http://localhost:8282/events/${id}`, { method: "DELETE" });
-
-    // Navigate to another page after deletion
-    navigate("/events");
+    /*
+      <Form method='delete'>
+    */
   };
 
   return (
